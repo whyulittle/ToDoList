@@ -24,7 +24,7 @@
 	
 	<!-- build for android only -->
 	<platform name="android">
-		<preference name="phonegap-version" 				value="cli-7.1.2" />
+		<preference name="phonegap-version" 				value="cli-8.1.1" />
 		<preference name="permissions"             	    	value="none"/>
 		<preference name="orientation"              		value="portrait" />       
 		<preference name="target-device"             		value="universal" />     
