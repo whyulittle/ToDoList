@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+        id        = "ie.ray-egan.todo"
+        version   = "1.6.0">
+
+    <name>My To-Do List</name>
+
+    <description>
+        Keep track of all your daily tasks with this simple To-Do List App
+    </description>
+
+    <author href="http://ray-egan.ie" email="email@ray-egan.ie">
+        Ray Egan
+    </author>
+
+	<!-- "A config.xml file for PhoneGap. Hint: At the same level as your index.html" -->
+	<!-- i have followed the brief by placing both the config.xml and index.html files in the root directory -->
+	<!-- however the phonegap build docs recommend placing the config.xml in the root directory, and the index.html and other resources in a www directory -->
+	<!-- http://docs.phonegap.com/phonegap-build/getting-started/app-project-structure/ -->
+	<content src="index.html"></content>
+	
+	<!-- build for android only -->
+	<platform name="android">
+		<preference name="phonegap-version" 				value="cli-7.1.2" />
+		<preference name="permissions"             	    	value="none"/>
+		<preference name="orientation"              		value="portrait" />       
+		<preference name="target-device"             		value="universal" />     
+		<preference name="android-installLocation"   		value="auto" />    
+		<preference name="splashscreen" 					value="splash" />
+
+		<!-- core plugins -->
+		<plugin name="cordova-plugin-inappbrowser" 			spec="1.7.1" />
+		<plugin name="cordova-plugin-splashscreen" />
+		<plugin name="orientationLock" 						spec="https://github.com/cogitor/PhoneGap-OrientationLock.git" />
+	</platform>
+	
+	<!-- default & customised icons -->
+	<!-- http://docs.phonegap.com/phonegap-build/configuring/icons-and-splash/ -->
+	<icon src="icon.png" />
+	<icon src="res/icon/android/ldpi.png" 				platform="android" 	  qualifier="ldpi" />
+	<icon src="res/icon/android/mdpi.png"  				platform="android"    qualifier="mdpi" />
+	<icon src="res/icon/android/hdpi.png"   			platform="android"    gap:qualifier="hdpi" />
+	<icon src="res/icon/android/xhdpi.png"  			platform="android"    qualifier="xhdpi" />
+	<icon src="res/icon/android/xxhdpi.png"  			platform="android"    qualifier="xxhdpi" />
+	<icon src="res/icon/android/xxxhdpi.png"  			platform="android"    qualifier="xxxhdpi" />
+	
+    <!-- default & customised splash screens -->
+	<!-- http://docs.phonegap.com/phonegap-build/configuring/icons-and-splash/ -->
+	<splash src="splash.png" />
+	<gap:splash src="res/screen/android/ldpi.png"       platform="android" 	qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/mdpi.png"       platform="android" 	qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/hdpi.png"       platform="android"	qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/xhdpi.png"      platform="android" 	qualifier="port-xhdpi" />
+	<gap:splash src="res/screen/android/xxhdpi.png"     platform="android" 	qualifier="port-xxhdpi" />
+	<gap:splash src="res/screen/android/xxxhdpi.png"    platform="android" 	qualifier="port-xxxhdpi" />
+    
+	<gap:config-file platform="android" parent="/manifest" >
+		<application>
+			<activity android:screenOrientation="portrait" android:configChanges="orientation"/>
+		</application>
+	</gap:config-file>
+
+</widget>

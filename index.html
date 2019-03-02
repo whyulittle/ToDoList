@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>My To-Do List</title>
+
+		<!-- local verions of google fonts & google material icons to allow our app fully work offline -->
+		<link rel="stylesheet" href="fonts/fonts.css">
+		<link rel="stylesheet" href="icons/icons.css">
+		<link rel="stylesheet" href="css/myCSS.css">
+		
+		<!--
+			Ray Egan
+			MWA Assessment 2 - Angular.JS To-Do List App
+			Date: 02/07/17
+		-->
+		
+	</head>
+
+	<!-- we mark everything from the body tag on as an angular app with the data-ng-app attribute -->
+	<body data-ng-app="myToDoList" class="noGutters">
+		
+		<!-- loading our controller -->
+		<div class="container alignCenter noGutters" data-ng-controller="myToDoListController">
+			
+			<div id="header">
+				<div class="floatLeft"><h1>&nbsp;My To-Do List</h1></div>
+				
+				<!-- we use {{getNumTasks()}} directive to return how many tasks are in our array in our controller -->
+				<div class="floatRight"><h1 data-ng-model="getNumTasks"> No. of Tasks: {{getNumTasks()}}</h1></div>
+			</div>
+
+			<ul id="listPage">
+				<!-- we use data-ng-repeat to populate our ul with as many list items as there are tasks in our todoList in our controller -->
+				<!-- using a number of different directives to return bound data from our controller -->
+				<li data-ng-repeat="currentTask in todoList track by $index" class="done-{{currentTask.done}}">#{{$index+1}}<input type="checkbox" data-ng-model="currentTask.done" id="checkBox" />&nbsp;<span id="taskName" class="highlight-{{currentTask.done}}">{{currentTask.task}}</span><span id="taskDescription"> {{currentTask.description}}</span></li>
+				
+				<!-- outputs a message to the user whenever before they add and after they clear their tasks -->
+				<li data-ng-view="getStatusMsg()" id="statusMsg">{{getStatusMsg()}}</li>
+			</ul>
+
+			<div id="form">	
+				<!-- task name -->
+				<!-- binds the data entered to newTask.task and pushes it to todoList in our controller when the 'Add Task' button is pushed -->
+				<input type="text" data-ng-model="newTask.task" class="noBorder" placeholder="Enter Task Name" />
+
+				<!-- task description -->
+				<!-- binds the data entered to newTask.description and pushes it to todoList in our controller when the 'Add Task' button is pushed -->
+				<input type="text" data-ng-model="newTask.description" placeholder="Enter Description" />
+
+				<!-- delete button with 'delete_forever' icon from 'icons.css'-->
+				<button data-ng-click="removeCompletedTasks()" class="red"><i class="material-icons" data-ng-model="getScrapMsg">delete_forever</i>&nbsp;Bin Task</button>
+
+				<!-- add button with 'assignment' icon from 'icons.css'-->
+				<button data-ng-click="addNewTask()" class="green"><i class="material-icons">assignment</i>&nbsp;Add Task</button>
+			</div>
+
+		</div>
+		
+		<!-- loading angular and our controller file at the foot of the document -->
+		<!-- there is also a train of thought to load it in the head section which reduces seeing the {{directiveNames}} briefly pop up on page load -->
+		<script src="js/angular.js"></script>
+		<script src="js/myApp.js"></script>
+		<script src="phonegap.js"></script>
+	</body>
+
+</html>

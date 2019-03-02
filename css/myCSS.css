@@ -1,0 +1,190 @@
+body
+{
+	
+	min-width: 300px;
+}
+
+.noGutters
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#header
+{	
+	background: #dedede;
+	height: 60px;;
+	border-bottom: 2px dashed #999;
+	min-width: 300px;
+}
+
+.floatLeft
+{
+	float: left;
+	width: 50%;
+}
+
+.floatRight
+{
+	float: right;
+	width: 50%;
+}
+
+h1
+{
+	padding-left: 5px;
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+	padding-top: 10px;
+	margin-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;	
+}
+
+ul 
+{	padding: 0; 
+	margin: 0; 
+	white-space: wrap; 
+}
+
+#listPage
+{
+	background: #F00;
+	height: 800px;
+	overflow-y: scroll;
+
+	background-image: url(../images/background.png);
+	background-position: top left;
+	background-repeat: repeat-x repeat-y;
+	background-size: auto;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+li 
+{	
+	list-style-type: none; 
+	padding-left: 15px;
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 30px;
+}
+
+.done-true 
+{
+	color: #FFF;
+	background-color: #a23232;
+	border-bottom: 1px solid #555;
+	line-height: 29px;
+}
+
+.done-false
+{
+  	color: #000;
+}
+
+input[type=checkbox]
+{
+	width: 22px;
+	height: 22px;
+}
+
+#taskDescription
+{
+	padding-left: 5px;
+}
+
+.highlight-true
+{
+	background: #a23232;
+    padding: 0px 10px 0px 8px;
+    margin: -3px -5px;
+	line-height: 29px;
+    border-radius: 3px;
+    display:inline-block;
+}
+
+.highlight-false
+{
+	background: rgba(255, 230, 0, 0.5);
+    padding: 0px 10px 0px 8px;
+    margin: -3px -5px;
+	line-height: 30px;
+    border-radius: 3px;
+    display:inline-block;
+}
+
+#statusMsg
+{
+	padding-left: 0px;
+	text-align: center;
+	font-size: 35px;
+	padding-top: 149px;
+}
+
+input[type=text]
+{
+	background: #dedede;
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+	font-size: 25px;
+	letter-spacing: 1px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 40px;
+	padding-left: 5px;
+}
+
+input::-webkit-input-placeholder 
+{ 
+    color: #9a9a9a;
+}
+
+#form
+{
+	background-color: #EFEFEF;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	border-top: 2px dashed #999;
+}
+
+button
+{
+	width: 50%;	
+	height: 50px;
+	float: left;	
+	font-family: 'Amatic SC';
+	font-size: 30px;
+	font-weight: 400;
+	color: #FFF;
+}
+
+.noBorder
+{
+	border-top: 0px;
+}
+
+.alignCenter
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignLeft
+{
+	text-align: left;
+}
+
+.green
+{
+	background-color: #006400;
+}
+
+.red
+{
+	background-color: #8B0000;
+}

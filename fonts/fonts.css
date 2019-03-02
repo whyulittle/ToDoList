@@ -1,0 +1,10 @@
+@font-face 
+{
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amatic SC Regular'), 
+	   local('AmaticSC-Regular'),
+       url('../fonts/amatic-sc-v9-latin-regular.woff2') format('woff2'), 
+       url('../fonts/amatic-sc-v9-latin-regular.woff') format('woff'); 
+}
