@@ -2,6 +2,7 @@ var myApp = angular.module("myToDoList", []);
 		
 myApp.controller("myToDoListController", function($scope)		
 {			
+	document.getElementById('statusMsg').style.display = "none";
 	var statusMsg = "";
 	
 	$scope.getStatusMsg = function()
@@ -22,6 +23,7 @@ myApp.controller("myToDoListController", function($scope)
 		$scope.todoList = [];
 		statusMsg = "Welcome! Please enter your 1st task!";
 		$scope.getStatusMsg();
+		document.getElementById('statusMsg').style.display = "block";
 	}
 		
 	// returns the number of tasks held in the array
